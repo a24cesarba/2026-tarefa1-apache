@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "By Invitation Only"
+AuthBasicProvider file
+AuthUserFile "/opt/web/omeusitio.lan/htdocs/passwords"
+AuthGroupFile "/opt/web/omeusitio.lan/htdocs/groups"
+Require group usuarios

@@ -1,0 +1,5 @@
+AuthType Digest
+AuthName myrealm
+AuthDigestProvider file
+AuthUserFile "/opt/web/omeusitio.lan/.htpasswords"
+Require user xan lois

@@ -1,13 +1,17 @@
 services:
   web:
     build: apache
+    hostname: web
     ports:
       - 80:80
     volumes:
       - ./apache/tarefa1.conf:/etc/apache2/sites-enabled/tarefa1.conf
+      - ./apache/tarefa2.conf:/etc/apache2/sites-enabled/tarefa2.conf
       - ./apache/tarefa3.conf:/etc/apache2/sites-enabled/tarefa3.conf
       - ./exemplo.lan:/opt/web/exemplo.lan
       - ./omeusitio.lan:/opt/web/omeusitio.lan
+      - ./omeusitio2.lan:/opt/web/omeusitio2.lan
+      - ./certificados/:/certificados/
 
     networks:
       redeapache:
@@ -17,6 +21,8 @@ services:
           - eq1.exemplo.lan
           - omeusitio.lan
           - www.omeusitio.lan
+          - omeusitio2.lan
+          - www.omeusitio2.lan
     develop:
       watch:
         - path: ./apache/tarefa1.conf
